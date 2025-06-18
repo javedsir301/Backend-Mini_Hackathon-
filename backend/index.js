@@ -27,6 +27,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/practice_mern')
         });
     }).catch(err => console.error("MongoDB connection error:", err));
 
+app.get('/',(req , res)=> {
+  res.send({
+    activeStatus :true,
+    error : false,
+  })
+})
+
 app.post('/register', (req, res) => {
     const { email } = req.body;
     FormDataModel.findOne({ email }).then(user => {
