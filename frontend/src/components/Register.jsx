@@ -19,7 +19,7 @@ const Register = () => {
       return;
     }
 
-    axios.post('https://backend-mini-hackathon.vercel.app/register', { name, email, password, role })
+    axios.post('https://rolebaseddashboardbackend.vercel.app/register', { name, email, password, role })
       .then(res => {
         if (res.data === "Already registered") {
           alert("Email already registered. Please login.");

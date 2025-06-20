@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://backend-mini-hackathon.vercel.app/login', { email, password })
+    axios.post('https://rolebaseddashboardbackend.vercel.app/login', { email, password })
     .then(result => {
         const { message, role } = result.data;
 
