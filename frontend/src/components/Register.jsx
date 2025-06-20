@@ -47,7 +47,7 @@ const Register = () => {
           </div>
           <div className="mb-3 text-start">
             <label><strong>Password</strong></label>
-            <input type="password" className="form-control" required onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" className="form-control"  autoComplete='current-password' required onChange={(e) => setPassword(e.target.value)} />
           </div>
           <div className="mb-3 text-start">
             <label><strong>Role</strong></label>
