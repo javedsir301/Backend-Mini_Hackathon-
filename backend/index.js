@@ -6,11 +6,16 @@ const FormDataModel = require('./models/FormData');
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true}));
+// app.use(cors({ origin: process.env.CLIENT_URL, credentials: true}));
+const corsOptions = {
+  origin: 'https://frontenddashboard-blush.vercel.app',
+  optionsSuccessStatus: 200 
+}
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3001;
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("MongoDB connected");
 
