@@ -7,11 +7,8 @@ const FormDataModel = require('./models/FormData');
 const app = express();
 app.use(express.json());
 // app.use(cors({ origin: process.env.CLIENT_URL, credentials: true}));
-const corsOptions = {
-  origin: 'https://jovial-froyo-e64258.netlify.app/',
-  optionsSuccessStatus: 200 
-}
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 
