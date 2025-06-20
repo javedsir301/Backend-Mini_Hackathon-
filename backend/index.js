@@ -6,7 +6,12 @@ const FormDataModel = require('./models/FormData');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://lucent-vacherin-177337.netlify.app',
+  credentials: true
+}));
+
 
 const PORT = process.env.PORT || 3001;
 
